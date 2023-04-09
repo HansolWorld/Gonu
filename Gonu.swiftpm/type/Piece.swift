@@ -103,8 +103,3 @@ struct Piece: Hashable {
         return result
     }
 }
-
-enum Player {
-    case white
-    case black
-}
