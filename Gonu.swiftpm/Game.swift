@@ -31,6 +31,8 @@ struct Game: View {
     
     var body: some View {
         ZStack {
+            Rectangle()
+                .fill(.white)
             GeometryReader { geometry in
                 let circleW = geometry.size.width/10
                 let circleH = geometry.size.height/10
@@ -41,7 +43,7 @@ struct Game: View {
                 
                 ForEach(pieces, id: \.self) { piece in
                     Ellipse()
-                        .fill(piece.player == Player.white ? .white : .black)
+                        .fill(piece.player == Player.white ? .gray : .black)
                         .frame(width: circleW, height: circleH)
                         .offset(x: (CGFloat(piece.col)/w * geometry.size.width) - circleW/2,
                                 y: (CGFloat(piece.row)/h * geometry.size.height) - circleH/2)

@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-
 struct wellGonu: View {
 
     var body: some View {
         GeometryReader { geometry in
+            Rectangle()
+                .fill(.white)
             HStack {
                 Game(name: "Well", pieceList: [
                     Piece(col: 1, row: 0, player: .white),
@@ -34,6 +35,7 @@ struct wellGonu: View {
                     Spacer()
                 }
                 .frame(width: geometry.size.width * 1/4)
+                .foregroundColor(.black)
             }
             .padding(min(geometry.size.width/9, geometry.size.height/9))
         }

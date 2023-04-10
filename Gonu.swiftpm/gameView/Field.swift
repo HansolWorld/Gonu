@@ -12,6 +12,8 @@ struct fieldGonu: View {
     
     var body: some View {
         GeometryReader { geometry in
+            Rectangle()
+                .fill(.white)
             HStack {
                 Game(name: "Field", pieceList: [
                     Piece(col: 0, row: 0, player: .white),
@@ -34,7 +36,8 @@ struct fieldGonu: View {
                     Text("3. Take turns to move the pieces, and the player who blocks the opponent's pieces on one side and blocks the path wins.")
                     Spacer()
                 }
-                    .frame(width: geometry.size.width * 1/4)
+                .frame(width: geometry.size.width * 1/4)
+                .foregroundColor(.black)
             }
             .padding(min(geometry.size.width/9, geometry.size.height/9))
         }

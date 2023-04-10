@@ -11,6 +11,8 @@ struct pumpkinGonu: View {
     
     var body: some View {
         GeometryReader { geometry in
+            Rectangle()
+                .fill(.white)
             HStack {
                 Game(name: "Pumpkin", pieceList: [
                     Piece(col: 0, row: 0, player: .white),
@@ -35,6 +37,7 @@ struct pumpkinGonu: View {
                     Spacer()
                 }
                 .frame(width: geometry.size.width * 1/4)
+                .foregroundColor(.black)
             }
             .padding(min(geometry.size.width/9, geometry.size.height/9))
         }
